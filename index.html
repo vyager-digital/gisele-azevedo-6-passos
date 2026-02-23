@@ -1,0 +1,1762 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 Passos para Diminuir a Perda de Urina — Gisele Azevedo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --wine:      #5C1230;
+    --wine-deep: #3D0B1F;
+    --wine-light:#8A2048;
+    --cream:     #FBF6EE;
+    --cream-warm:#F5EDD8;
+    --green:     #1E5C3A;
+    --green-mid: #2E7D52;
+    --gold:      #C9A84C;
+    --gold-light:#E8CC7A;
+    --charcoal:  #2A2420;
+    --mid:       #6B5D55;
+    --light-txt: #9B8F87;
+  }
+
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ─── TYPOGRAPHY ─── */
+  .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+  h1,h2,h3 { font-family: 'Cormorant Garamond', Georgia, serif; line-height: 1.1; }
+
+  /* ─── SCROLL REVEALS ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal-left.visible { opacity:1; transform:translateX(0); }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal-right.visible { opacity:1; transform:translateX(0); }
+
+  /* ─── STICKY NAV ─── */
+  .topbar {
+    position: fixed; top:0; left:0; right:0; z-index:100;
+    background: rgba(92,18,48,0.97);
+    backdrop-filter: blur(10px);
+    padding: 12px 24px;
+    display: flex; align-items:center; justify-content:space-between;
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+    transform: translateY(-100%);
+    transition: transform 0.4s ease;
+  }
+  .topbar.show { transform: translateY(0); }
+  .topbar-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight:600;
+    color: var(--cream);
+    letter-spacing: 0.05em;
+  }
+  .topbar-cta {
+    background: var(--gold);
+    color: var(--wine-deep);
+    font-weight: 600; font-size: 0.75rem;
+    padding: 8px 18px; border-radius: 2px;
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: background 0.3s;
+  }
+  .topbar-cta:hover { background: var(--gold-light); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    background: var(--wine-deep);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+    opacity: 0.12;
+    filter: grayscale(40%);
+  }
+
+  .hero::before {
+    content:'';
+    position:absolute; inset:0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(201,168,76,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(138,32,72,0.3) 0%, transparent 50%);
+    pointer-events:none;
+  }
+
+  /* Geometric decorative lines */
+  .hero::after {
+    content:'';
+    position:absolute;
+    top:0; right:0;
+    width:45%;
+    height:100%;
+    background: var(--wine);
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index:0;
+  }
+
+  .hero-text {
+    padding: 120px 60px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold-light);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 2px;
+    margin-bottom: 28px;
+    width: fit-content;
+    animation: fadeSlideDown 0.8s ease 0.2s both;
+  }
+
+  .hero-eyebrow::before {
+    content:'';
+    width:6px; height:6px;
+    background: var(--gold);
+    border-radius:50%;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.08;
+    margin-bottom: 8px;
+    animation: fadeSlideDown 0.8s ease 0.35s both;
+  }
+
+  .hero-headline em {
+    font-style: italic;
+    color: var(--gold-light);
+    font-weight: 400;
+  }
+
+  .hero-headline strong {
+    font-weight: 600;
+    display: block;
+    color: #fff;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: rgba(251,246,238,0.7);
+    line-height: 1.7;
+    max-width: 480px;
+    margin-bottom: 40px;
+    font-weight: 300;
+    animation: fadeSlideDown 0.8s ease 0.5s both;
+  }
+
+  .hero-sub strong { color: var(--cream); font-weight: 500; }
+
+  .stat-row {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 48px;
+    animation: fadeSlideDown 0.8s ease 0.65s both;
+  }
+
+  .stat {
+    border-left: 2px solid var(--gold);
+    padding-left: 16px;
+  }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    color: rgba(251,246,238,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 4px;
+  }
+
+  .hero-cta-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    animation: fadeSlideDown 0.8s ease 0.8s both;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--gold);
+    color: var(--wine-deep);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 18px 36px;
+    border-radius: 2px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 8px 30px rgba(201,168,76,0.35);
+    width: fit-content;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(201,168,76,0.45);
+  }
+
+  .btn-arrow {
+    width: 18px; height: 18px;
+    border: 2px solid var(--wine-deep);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+  }
+
+  .hero-guarantee {
+    font-size: 0.72rem;
+    color: rgba(251,246,238,0.5);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .hero-guarantee::before {
+    content:'🔒';
+    font-size: 0.8rem;
+  }
+
+  .hero-visual {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 60px 80px 40px;
+  }
+
+  .video-card {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+    animation: fadeSlideDown 1s ease 0.4s both;
+  }
+
+  .video-thumb {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, #3D0B1F 0%, #6B1535 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  .video-thumb-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--cream);
+    text-align: center;
+    line-height: 1.2;
+    z-index:4;
+    padding: 0 30px;
+    position: relative;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+  }
+
+  .video-thumb-text span { color: var(--gold-light); font-style: italic; }
+
+  .play-btn {
+    position: absolute;
+    width: 64px; height: 64px;
+    background: rgba(201,168,76,0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+  }
+
+  .play-btn:hover {
+    transform: translate(-50%,-50%) scale(1.1);
+    background: var(--gold);
+  }
+
+  .play-icon {
+    width:0; height:0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 20px solid var(--wine-deep);
+    margin-left: 4px;
+  }
+
+  .video-caption {
+    background: var(--wine);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .doctor-badge {
+    width: 40px; height: 40px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink:0;
+  }
+
+  .video-caption-text { flex:1; }
+
+  .video-caption-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--cream);
+  }
+
+  .video-caption-title {
+    font-size: 0.7rem;
+    color: rgba(251,246,238,0.6);
+    letter-spacing: 0.05em;
+  }
+
+  .floating-badge {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    background: var(--green);
+    color: var(--cream);
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-align:center;
+    text-transform: uppercase;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    line-height: 1.4;
+  }
+
+  .floating-badge strong {
+    display:block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight:700;
+    letter-spacing:0;
+    line-height:1;
+  }
+
+  /* ─── SECTION COMMONS ─── */
+  .section { padding: 100px 80px; }
+
+  .section-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--wine);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-eyebrow::before {
+    content:'';
+    width: 32px; height: 1px;
+    background: var(--wine);
+  }
+
+  .section-title {
+    font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+    font-weight: 400;
+    color: var(--wine-deep);
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  .section-title em { font-style:italic; color: var(--wine); }
+
+  .section-lead {
+    font-size: 1.1rem;
+    color: var(--mid);
+    line-height: 1.75;
+    max-width: 600px;
+    font-weight: 300;
+  }
+
+  /* ─── PAIN POINTS ─── */
+  .pain-section {
+    background: var(--cream-warm);
+    padding: 80px;
+    position: relative;
+  }
+
+  .pain-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-top: 60px;
+    border: 1px solid rgba(92,18,48,0.1);
+  }
+
+  .pain-card {
+    padding: 40px;
+    border-right: 1px solid rgba(92,18,48,0.1);
+    border-bottom: 1px solid rgba(92,18,48,0.1);
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .pain-card:nth-child(2n) { border-right: none; }
+  .pain-card:nth-last-child(-n+2) { border-bottom: none; }
+
+  .pain-card::before {
+    content:'';
+    position:absolute;
+    bottom:0; left:0;
+    height:3px; width:0;
+    background: var(--wine);
+    transition: width 0.4s ease;
+  }
+
+  .pain-card:hover::before { width:100%; }
+  .pain-card:hover { background: rgba(92,18,48,0.03); }
+
+  .pain-icon {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    display:block;
+  }
+
+  .pain-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--wine-deep);
+    margin-bottom: 10px;
+  }
+
+  .pain-desc {
+    font-size: 0.9rem;
+    color: var(--mid);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ─── CAUSE SECTION ─── */
+  .cause-section {
+    background: var(--wine-deep);
+    color: var(--cream);
+    padding: 100px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cause-section::before {
+    content:'';
+    position:absolute;
+    top:-100px; right:-100px;
+    width: 500px; height: 500px;
+    border-radius:50%;
+    border: 80px solid rgba(201,168,76,0.08);
+    pointer-events:none;
+  }
+
+  .cause-section::after {
+    content:'';
+    position:absolute;
+    bottom:-80px; left:-60px;
+    width: 300px; height: 300px;
+    border-radius:50%;
+    border: 50px solid rgba(201,168,76,0.05);
+    pointer-events:none;
+  }
+
+  .cause-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index:2;
+  }
+
+  .cause-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .cause-eyebrow::before {
+    content:'';
+    width: 32px; height: 1px;
+    background: var(--gold);
+  }
+
+  .cause-title {
+    font-size: clamp(2.2rem, 3.2vw, 3rem);
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+
+  .cause-title em { color: var(--gold-light); font-style:italic; }
+
+  .cause-desc {
+    font-size: 1rem;
+    color: rgba(251,246,238,0.75);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+
+  .comparison-table {
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .comparison-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .comparison-header {
+    background: rgba(201,168,76,0.1);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .comp-cell {
+    padding: 14px 20px;
+    font-size: 0.8rem;
+    border-right: 1px solid rgba(201,168,76,0.15);
+    color: rgba(251,246,238,0.9);
+  }
+
+  .comp-cell:last-child { border-right: none; }
+
+  .comp-cell.highlight {
+    background: rgba(30,92,58,0.3);
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .comp-cell.label {
+    color: var(--gold-light);
+    font-weight: 500;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .comp-cell.header-label {
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gold-light);
+  }
+
+  .comp-row-data { border-bottom: 1px solid rgba(201,168,76,0.1); }
+  .comp-row-data:last-child { border-bottom: none; }
+
+  .check { color: #4CAF50; }
+  .cross { color: #f44336; }
+
+  /* ─── 5 STEPS ─── */
+  .steps-section {
+    padding: 100px 80px;
+    background: var(--cream);
+  }
+
+  .steps-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: end;
+    margin-bottom: 80px;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: rgba(92,18,48,0.1);
+  }
+
+  .step-card {
+    background: var(--cream);
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.4s;
+  }
+
+  .step-card::before {
+    content: '';
+    position: absolute;
+    top:0; left:0; right:0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--wine), var(--gold));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .step-card:hover::before { transform: scaleX(1); }
+  .step-card:hover { background: rgba(92,18,48,0.02); }
+
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    font-weight: 700;
+    color: rgba(92,18,48,0.07);
+    line-height: 1;
+    position: absolute;
+    top: 20px; right: 24px;
+  }
+
+  .step-icon { font-size: 2rem; margin-bottom: 20px; display:block; }
+
+  .step-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--wine);
+    margin-bottom: 8px;
+  }
+
+  .step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--wine-deep);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .step-desc {
+    font-size: 0.88rem;
+    color: var(--mid);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .step-bonus {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, var(--wine-deep), var(--wine));
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .bonus-badge {
+    background: var(--gold);
+    color: var(--wine-deep);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  .bonus-text { flex:1; }
+
+  .bonus-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 4px;
+  }
+
+  .bonus-desc {
+    font-size: 0.83rem;
+    color: rgba(251,246,238,0.7);
+    font-weight: 300;
+  }
+
+  /* ─── TESTIMONIALS ─── */
+  .testimonials-section {
+    background: var(--cream-warm);
+    padding: 100px 80px;
+  }
+
+  .testi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    margin-top: 60px;
+  }
+
+  .testi-card {
+    background: var(--cream);
+    padding: 36px;
+    border-radius: 2px;
+    position: relative;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+
+  .testi-card:hover {
+    border-color: var(--wine);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px rgba(92,18,48,0.1);
+  }
+
+  .testi-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    color: var(--cream-warm);
+    line-height: 0.5;
+    margin-bottom: 16px;
+    font-weight:700;
+    color: rgba(92,18,48,0.12);
+  }
+
+  .testi-stars {
+    color: var(--gold);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+  }
+
+  .testi-text {
+    font-size: 0.92rem;
+    color: var(--charcoal);
+    line-height: 1.75;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 24px;
+  }
+
+  .testi-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid rgba(92,18,48,0.08);
+    padding-top: 20px;
+  }
+
+  .testi-avatar {
+    width: 40px; height: 40px;
+    background: var(--wine);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cream);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    flex-shrink:0;
+  }
+
+  .testi-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--wine-deep);
+  }
+
+  .testi-age {
+    font-size: 0.75rem;
+    color: var(--light-txt);
+    margin-top: 2px;
+  }
+
+  /* ─── PRICING ─── */
+  .pricing-section {
+    padding: 100px 80px;
+    background: var(--cream);
+  }
+
+  .pricing-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .pricing-compare-title {
+    font-size: 0.85rem;
+    color: var(--mid);
+    margin-bottom: 24px;
+    font-weight: 400;
+  }
+
+  .compare-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(92,18,48,0.08);
+  }
+
+  .compare-item:last-child { border-bottom: none; }
+
+  .compare-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: var(--mid);
+  }
+
+  .compare-left .icon { font-size: 1rem; }
+
+  .compare-price {
+    font-size: 0.9rem;
+    color: var(--mid);
+  }
+
+  .compare-price.strike {
+    text-decoration: line-through;
+    color: var(--light-txt);
+  }
+
+  .pricing-card {
+    background: var(--wine-deep);
+    padding: 56px 48px;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(92,18,48,0.3);
+  }
+
+  .pricing-card::before {
+    content:'';
+    position:absolute;
+    top:-60px; right:-60px;
+    width:200px; height:200px;
+    border-radius:50%;
+    border: 40px solid rgba(201,168,76,0.08);
+  }
+
+  .pricing-badge {
+    background: var(--green);
+    color: var(--cream);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 2px;
+    width: fit-content;
+    margin-bottom: 24px;
+  }
+
+  .pricing-product {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--gold-light);
+    font-weight: 400;
+    margin-bottom: 4px;
+    letter-spacing: 0.05em;
+  }
+
+  .pricing-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 32px;
+    line-height: 1.2;
+  }
+
+  .pricing-price-wrap {
+    margin-bottom: 36px;
+  }
+
+  .pricing-was {
+    font-size: 0.8rem;
+    color: rgba(251,246,238,0.4);
+    text-decoration: line-through;
+    margin-bottom: 4px;
+  }
+
+  .pricing-amount {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+
+  .price-currency {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+
+  .price-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .price-installment {
+    font-size: 0.78rem;
+    color: rgba(251,246,238,0.6);
+    margin-top: 6px;
+  }
+
+  .pricing-includes {
+    list-style: none;
+    margin-bottom: 36px;
+  }
+
+  .pricing-includes li {
+    padding: 8px 0;
+    font-size: 0.88rem;
+    color: rgba(251,246,238,0.8);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid rgba(201,168,76,0.08);
+  }
+
+  .pricing-includes li:last-child { border-bottom:none; }
+
+  .pricing-includes li::before {
+    content:'✓';
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink:0;
+  }
+
+  .btn-pricing {
+    display: block;
+    background: var(--gold);
+    color: var(--wine-deep);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 20px;
+    border-radius: 2px;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 8px 30px rgba(201,168,76,0.3);
+    margin-bottom: 14px;
+  }
+
+  .btn-pricing:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+  }
+
+  .pricing-security {
+    text-align: center;
+    font-size: 0.72rem;
+    color: rgba(251,246,238,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  /* ─── ABOUT ─── */
+  .about-section {
+    background: var(--cream-warm);
+    padding: 100px 80px;
+  }
+
+  .about-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-photo-wrap {
+    position: relative;
+  }
+
+  .about-photo {
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 2px;
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    background: var(--wine-deep);
+  }
+
+  .about-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    filter: brightness(0.85) saturate(0.9);
+  }
+
+  .about-photo-overlay {
+    background: rgba(61,11,31,0.82);
+    backdrop-filter: blur(4px);
+    padding: 20px;
+    border-radius: 2px;
+    width: 100%;
+    z-index:2;
+    position:relative;
+  }
+
+  .about-photo-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--cream);
+  }
+
+  .about-photo-title {
+    font-size: 0.72rem;
+    color: var(--gold-light);
+    letter-spacing: 0.08em;
+    margin-top: 4px;
+  }
+
+  .about-accent {
+    position: absolute;
+    top: -16px; left: -16px;
+    width: 80px; height: 80px;
+    border: 3px solid var(--gold);
+    border-radius: 2px;
+    z-index:0;
+  }
+
+  .about-credential-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .credential-chip {
+    background: var(--cream);
+    border: 1px solid rgba(92,18,48,0.12);
+    padding: 14px 16px;
+    border-radius: 2px;
+    font-size: 0.78rem;
+    color: var(--mid);
+    line-height: 1.4;
+  }
+
+  .credential-chip strong {
+    display: block;
+    color: var(--wine-deep);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .credentials-list {
+    list-style: none;
+    margin: 32px 0;
+  }
+
+  .credentials-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(92,18,48,0.08);
+    font-size: 0.92rem;
+    color: var(--mid);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .credentials-list li::before {
+    content:'';
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius:50%;
+    flex-shrink:0;
+    margin-top: 7px;
+  }
+
+  /* ─── FINAL CTA ─── */
+  .final-cta {
+    background: linear-gradient(135deg, var(--green) 0%, #0F3A22 100%);
+    padding: 100px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-cta::before {
+    content:'';
+    position:absolute;
+    top:-80px; left:50%;
+    transform:translateX(-50%);
+    width:600px; height:600px;
+    border-radius:50%;
+    border: 80px solid rgba(255,255,255,0.04);
+    pointer-events:none;
+  }
+
+  .final-cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    position:relative; z-index:2;
+  }
+
+  .final-cta-title em { font-style:italic; color: var(--gold-light); }
+
+  .final-cta-sub {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.7);
+    max-width: 500px;
+    margin: 0 auto 48px;
+    line-height: 1.7;
+    font-weight: 300;
+    position:relative; z-index:2;
+  }
+
+  .final-cta .btn-primary {
+    margin: 0 auto 16px;
+    font-size: 0.9rem;
+    padding: 20px 48px;
+    position:relative; z-index:2;
+  }
+
+  .final-price-note {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    position:relative; z-index:2;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--wine-deep);
+    padding: 40px 80px;
+    text-align:center;
+    font-size: 0.75rem;
+    color: rgba(251,246,238,0.4);
+    line-height: 1.8;
+  }
+
+  footer a { color: rgba(201,168,76,0.7); text-decoration:none; }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeSlideDown {
+    from { opacity:0; transform: translateY(-20px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
+
+  @keyframes pulse-ring {
+    0%   { transform: translate(-50%,-50%) scale(1); opacity:0.6; }
+    100% { transform: translate(-50%,-50%) scale(1.5); opacity:0; }
+  }
+
+  .play-ring {
+    position:absolute;
+    top:50%; left:50%;
+    transform: translate(-50%,-50%);
+    width: 80px; height: 80px;
+    border: 2px solid rgba(201,168,76,0.5);
+    border-radius: 50%;
+    animation: pulse-ring 2s ease-out infinite;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1024px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero::after { display:none; }
+    .hero-text { padding: 140px 40px 60px; }
+    .hero-visual { padding: 0 40px 60px; }
+    .video-card { max-width: 100%; }
+    .cause-inner, .steps-header, .pricing-inner, .about-inner { grid-template-columns: 1fr; gap:48px; }
+    .section, .pain-section, .cause-section, .about-section, .testimonials-section, .pricing-section, .steps-section, .final-cta {
+      padding: 60px 32px;
+    }
+    .testi-grid { grid-template-columns: 1fr; }
+    .pain-grid { grid-template-columns: 1fr; }
+    .pain-card { border-right: none; }
+    .steps-grid { grid-template-columns: 1fr; }
+    .step-bonus { grid-column: auto; }
+    .about-credential-strip { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .stat-row { flex-direction: column; gap: 20px; }
+    .hero-headline { font-size: 2.2rem; }
+    .floating-badge { display:none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- STICKY NAV -->
+<nav class="topbar" id="topbar">
+  <div class="topbar-name">Gisele Azevedo · 5 Passos</div>
+  <a href="#pricing" class="topbar-cta">Comprar Agora · R$67</a>
+</nav>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero" id="hero">
+  <!-- Subtle background lifestyle image -->
+  <img class="hero-bg-img" 
+    src="https://lp.giseleazevedo.com/wp-content/uploads/2025/03/Gi-bio.webp"
+    alt="" aria-hidden="true">
+  <div class="hero-text">
+    <div class="hero-eyebrow">Método clínico · 29 anos de experiência</div>
+
+    <h1 class="hero-headline">
+      Perder urina
+      <em>não é normal</em>
+      <strong>— e tem solução<br>sem cirurgia.</strong>
+    </h1>
+
+    <p class="hero-sub">
+      Em cada <strong>3 mulheres</strong>, 1 sofre com incontinência urinária em silêncio. Você merece saber a verdade: a solução é muito mais simples do que te contaram.
+    </p>
+
+    <div class="stat-row">
+      <div class="stat">
+        <div class="stat-num">29</div>
+        <div class="stat-label">Anos de prática clínica</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3.000+</div>
+        <div class="stat-label">Alunas atendidas</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5</div>
+        <div class="stat-label">Passos para começar hoje</div>
+      </div>
+    </div>
+
+    <div class="hero-cta-wrap">
+      <a href="#pricing" class="btn-primary">
+        Comprar meu acesso aos 5 Passos
+        <span class="btn-arrow">→</span>
+      </a>
+      <span class="hero-guarantee">Garantia de 7 dias · Acesso imediato</span>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="video-card reveal-right">
+      <div class="floating-badge">
+        <strong>R$67</strong>
+        Acesso vitalício
+      </div>
+      <div class="video-thumb" style="padding:0;">
+        <iframe 
+          src="https://www.youtube.com/embed/lFJOoC20AxA" 
+          title="O começo do fim das perdas urinárias — Gisele Azevedo"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen
+          style="position:absolute;inset:0;width:100%;height:100%;border:none;">
+        </iframe>
+      </div>
+      <div class="video-caption">
+        <div class="doctor-badge">👩‍⚕️</div>
+        <div class="video-caption-text">
+          <div class="video-caption-name">Gisele Azevedo</div>
+          <div class="video-caption-title">Especialista · Ex-docente PUC-SP · 29 anos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PAIN POINTS ═══════════════ -->
+<section class="pain-section">
+  <div class="reveal">
+    <div class="section-eyebrow">Você se identifica?</div>
+    <h2 class="section-title">A realidade que <em>ninguém fala</em></h2>
+    <p class="section-lead">A incontinência vai muito além do escape físico. Ela rouba sua liberdade, sua confiança e sua alegria — um pouquinho por dia.</p>
+  </div>
+
+  <div class="pain-grid">
+    <div class="pain-card reveal" style="transition-delay:0.1s">
+      <span class="pain-icon">💧</span>
+      <div class="pain-title">Escapes Involuntários</div>
+      <p class="pain-desc">Ao espirrar, rir, tossir ou correr — o xixi escapa antes que você possa fazer qualquer coisa. E a vergonha que vem junto é paralisante.</p>
+    </div>
+    <div class="pain-card reveal" style="transition-delay:0.2s">
+      <span class="pain-icon">💰</span>
+      <div class="pain-title">Custo Invisível</div>
+      <p class="pain-desc">Absorventes diários, trocas de roupa, cancelamentos de planos. O gasto financeiro e emocional é enorme — e silencioso.</p>
+    </div>
+    <div class="pain-card reveal" style="transition-delay:0.3s">
+      <span class="pain-icon">🏠</span>
+      <div class="pain-title">Isolamento Social</div>
+      <p class="pain-desc">Você começa a evitar situações, lugares, pessoas. A vergonha de sair de casa por medo de um escape vai reduzindo seu mundo.</p>
+    </div>
+    <div class="pain-card reveal" style="transition-delay:0.4s">
+      <span class="pain-icon">⏰</span>
+      <div class="pain-title">"É normal da idade"</div>
+      <p class="pain-desc">A maior mentira que te contaram. Perder urina não é uma consequência inevitável do tempo. É algo tratável — e você merece saber disso.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CAUSE ═══════════════ -->
+<section class="cause-section">
+  <div class="cause-inner">
+    <div class="reveal-left">
+      <div class="cause-eyebrow">A verdade clínica</div>
+      <h2 class="cause-title">A causa real:<br><em>Não é a idade.</em><br>É a flacidez muscular.</h2>
+      <p class="cause-desc">
+        Seus músculos pélvicos precisam de treino, não de cirurgia. Assim como qualquer outro músculo do corpo, se você não exercitar, ele enfraquece. Décadas de hábitos errados sobrecarregam essa musculatura — e um dia ela simplesmente não dá mais conta.
+      </p>
+      <p class="cause-desc">
+        A boa notícia? Músculo fraco se fortalece. E começa com mudanças simples — exatamente o que você vai aprender nos 5 Passos.
+      </p>
+    </div>
+    <div class="reveal-right">
+      <div class="comparison-table">
+        <div class="comparison-row comparison-header">
+          <div class="comp-cell header-label">Abordagem</div>
+          <div class="comp-cell header-label">Resultado</div>
+          <div class="comp-cell header-label">Risco</div>
+        </div>
+        <div class="comparison-row comp-row-data">
+          <div class="comp-cell label">Sem treino</div>
+          <div class="comp-cell"><span class="cross">✗</span> Piora com o tempo</div>
+          <div class="comp-cell">Alto</div>
+        </div>
+        <div class="comparison-row comp-row-data">
+          <div class="comp-cell label">Cirurgia</div>
+          <div class="comp-cell"><span class="cross">✗</span> Invasiva, sem garantia</div>
+          <div class="comp-cell">Alto</div>
+        </div>
+        <div class="comparison-row comp-row-data">
+          <div class="comp-cell label">Remédios</div>
+          <div class="comp-cell"><span class="cross">✗</span> Não fortalecem músculo</div>
+          <div class="comp-cell">Médio</div>
+        </div>
+        <div class="comparison-row comp-row-data">
+          <div class="comp-cell label highlight">5 Passos ✦</div>
+          <div class="comp-cell highlight"><span class="check">✓</span> Fortalecimento real</div>
+          <div class="comp-cell highlight">Zero</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ 5 STEPS ═══════════════ -->
+<section class="steps-section">
+  <div class="steps-header">
+    <div class="reveal">
+      <div class="section-eyebrow">O método</div>
+      <h2 class="section-title">O que você vai<br><em>aprender</em> nos 5 Passos</h2>
+    </div>
+    <div class="reveal" style="transition-delay:0.2s">
+      <p class="section-lead">Cada passo é uma peça essencial. Em conjunto, eles removem a sobrecarga dos seus músculos e constroem a base para o fortalecimento real.</p>
+    </div>
+  </div>
+
+  <div class="steps-grid">
+    <div class="step-card reveal" style="transition-delay:0.05s">
+      <div class="step-num">1</div>
+      <span class="step-icon">💧</span>
+      <div class="step-label">Passo 1</div>
+      <div class="step-title">A forma certa de beber água</div>
+      <p class="step-desc">Existe um jeito errado de se hidratar — e ele certamente está piorando seus escapes. Descubra a quantidade correta para o seu corpo e o horário ideal para parar de beber.</p>
+    </div>
+
+    <div class="step-card reveal" style="transition-delay:0.1s">
+      <div class="step-num">2</div>
+      <span class="step-icon">🚿</span>
+      <div class="step-label">Passo 2</div>
+      <div class="step-title">Hábitos corretos no banheiro</div>
+      <p class="step-desc">A posição em que você senta no vaso importa mais do que imagina. Aprenda a posição de 35° que relaxa completamente o assoalho pélvico — e nunca mais faça força para urinar.</p>
+    </div>
+
+    <div class="step-card reveal" style="transition-delay:0.15s">
+      <div class="step-num">3</div>
+      <span class="step-icon">🌿</span>
+      <div class="step-label">Passo 3</div>
+      <div class="step-title">Lubrificação íntima</div>
+      <p class="step-desc">Com a queda hormonal, sua mucosa vaginal precisa de atenção diária. Aprenda o protocolo simples com óleo de coco extravirgem que muda a qualidade de vida de forma imediata.</p>
+    </div>
+
+    <div class="step-card reveal" style="transition-delay:0.2s">
+      <div class="step-num">4</div>
+      <span class="step-icon">🍊</span>
+      <div class="step-label">Passo 4</div>
+      <div class="step-title">Alimentação estratégica</div>
+      <p class="step-desc">Pimenta, álcool e cafeína irritam diretamente a bexiga. Descubra quais alimentos estão sabotando você e um hábito alimentar simples que regula o intestino — aliado essencial contra escapes.</p>
+    </div>
+
+    <div class="step-card reveal" style="transition-delay:0.25s">
+      <div class="step-num">5</div>
+      <span class="step-icon">💪</span>
+      <div class="step-label">Passo 5</div>
+      <div class="step-title">Exercício de ativação pélvica</div>
+      <p class="step-desc">O movimento básico que "acorda" seus músculos esquecidos. Não é Kegel genérico — é ativação neural progressiva, pré-requisito para qualquer tratamento de fortalecimento real.</p>
+    </div>
+
+    <div class="step-bonus reveal" style="transition-delay:0.3s">
+      <div class="bonus-badge">Bônus Exclusivo</div>
+      <div class="bonus-text">
+        <div class="bonus-title">📓 Caderno de Atividades em PDF</div>
+        <div class="bonus-desc">Material de apoio completo para acompanhar cada passo, registrar suas tarefas e monitorar seu progresso. Imprimível e visual.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ TESTIMONIALS ═══════════════ -->
+<section class="testimonials-section">
+  <div class="reveal" style="text-align:center">
+    <div class="section-eyebrow" style="justify-content:center">
+      <span style="width:32px;height:1px;background:var(--wine);display:inline-block"></span>
+      Histórias reais
+      <span style="width:32px;height:1px;background:var(--wine);display:inline-block"></span>
+    </div>
+    <h2 class="section-title" style="text-align:center">Elas recuperaram a <em>liberdade</em></h2>
+    <p class="section-lead" style="margin: 0 auto; text-align:center">Mulheres que aplicaram os 5 Passos e transformaram sua qualidade de vida.</p>
+  </div>
+
+  <div class="testi-grid">
+    <div class="testi-card reveal" style="transition-delay:0.1s">
+      <div class="testi-quote">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">Perdia urina há quase 40 anos e já havia tentado todos os métodos. O 5 Passos foi a única coisa que funcionou. Hoje tenho confiança para sair de casa sem absorvente.</p>
+      <div class="testi-footer">
+        <div class="testi-avatar">R</div>
+        <div>
+          <div class="testi-name">Rose</div>
+          <div class="testi-age">73 anos</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card reveal" style="transition-delay:0.2s">
+      <div class="testi-quote">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">Além dos escapes de urina, sofria com fortes dores no pé da barriga. Estava até com cirurgia marcada. Hoje me sinto livre. Não acreditei que fosse possível sem cirurgia.</p>
+      <div class="testi-footer">
+        <div class="testi-avatar">G</div>
+        <div>
+          <div class="testi-name">Gicélia</div>
+          <div class="testi-age">69 anos</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card reveal" style="transition-delay:0.3s">
+      <div class="testi-quote">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">Desde os 22 anos sofria com escapes. Também ia com urgência para urinar e escape de fezes. Com os 5 Passos recuperei minha confiança de volta. É transformador.</p>
+      <div class="testi-footer">
+        <div class="testi-avatar">R</div>
+        <div>
+          <div class="testi-name">Rosemary</div>
+          <div class="testi-age">55 anos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PRICING ═══════════════ -->
+<section class="pricing-section" id="pricing">
+  <div class="pricing-inner">
+    <div class="reveal-left">
+      <div class="section-eyebrow">Invista na sua saúde</div>
+      <h2 class="section-title">Quanto custa<br><em>continuar assim?</em></h2>
+      <p class="section-lead" style="margin-bottom:32px">Compare o custo real das alternativas com o que os 5 Passos oferecem por uma fração do preço.</p>
+
+      <p class="pricing-compare-title">O custo das alternativas:</p>
+
+      <div class="compare-item">
+        <div class="compare-left">
+          <span class="icon">🏥</span>
+          Cirurgia de incontinência
+        </div>
+        <div class="compare-price strike">R$10.000+</div>
+      </div>
+      <div class="compare-item">
+        <div class="compare-left">
+          <span class="icon">🧑‍⚕️</span>
+          Fisioterapia pélvica (mês)
+        </div>
+        <div class="compare-price strike">R$400–800</div>
+      </div>
+      <div class="compare-item">
+        <div class="compare-left">
+          <span class="icon">💊</span>
+          Absorventes diários (ano)
+        </div>
+        <div class="compare-price strike">R$600–1.200</div>
+      </div>
+      <div class="compare-item" style="border-top: 2px solid var(--wine); margin-top:8px; padding-top:16px">
+        <div class="compare-left" style="color:var(--wine-deep); font-weight:600">
+          <span class="icon">✦</span>
+          5 Passos — Acesso completo
+        </div>
+        <div class="compare-price" style="color:var(--green); font-weight:700">R$67</div>
+      </div>
+    </div>
+
+    <div class="reveal-right" style="transition-delay:0.2s">
+      <div class="pricing-card">
+        <div class="pricing-badge">✦ Oferta Especial</div>
+        <div class="pricing-product">Gisele Azevedo</div>
+        <div class="pricing-title">5 Passos para Diminuir<br>a Perda de Urina</div>
+
+        <div class="pricing-price-wrap">
+          <div class="pricing-was">De R$137,00</div>
+          <div class="pricing-amount">
+            <span class="price-currency">R$</span>
+            <span class="price-value">67</span>
+          </div>
+          <div class="price-installment">ou 5x de R$13,57 · Pagamento único</div>
+        </div>
+
+        <ul class="pricing-includes">
+          <li>5 módulos em vídeo com explicações completas</li>
+          <li>Áudios dos exercícios para praticar diariamente</li>
+          <li>Caderno de atividades em PDF (imprimível)</li>
+          <li>Acesso ao canal direto com Gisele para dúvidas</li>
+          <li>Encontros mensais ao vivo com alunas</li>
+          <li>Acesso vitalício ao conteúdo</li>
+        </ul>
+
+        <a href="https://lp.giseleazevedo.com/5-passos-2026/" class="btn-pricing">
+          Comprar Meu Acesso Agora
+        </a>
+
+        <div class="pricing-security">
+          🔒 Pagamento seguro · 7 dias de garantia · Acesso imediato
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ABOUT ═══════════════ -->
+<section class="about-section">
+  <div class="about-inner">
+    <div class="reveal-left">
+      <div class="about-photo-wrap">
+        <div class="about-accent"></div>
+        <div class="about-photo">
+          <img src="https://lp.giseleazevedo.com/wp-content/uploads/2025/03/Gi-bio.webp"
+               alt="Gisele Azevedo - Especialista em Saúde Íntima Feminina">
+          <div class="about-photo-overlay">
+            <div class="about-photo-name">Gisele Azevedo</div>
+            <div class="about-photo-title">Especialista em Saúde Íntima Feminina</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-credential-strip">
+        <div class="credential-chip">
+          <strong>29 anos</strong>
+          de prática clínica dedicada
+        </div>
+        <div class="credential-chip">
+          <strong>3.000+</strong>
+          casos acompanhados
+        </div>
+        <div class="credential-chip">
+          <strong>PUC-SP</strong>
+          Ex-docente na Faculdade de Medicina
+        </div>
+        <div class="credential-chip">
+          <strong>O Globo</strong>
+          Referência citada na mídia nacional
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal-right" style="transition-delay:0.15s">
+      <div class="section-eyebrow">Conheça a criadora</div>
+      <h2 class="section-title">A especialista<br>por trás do método</h2>
+      <p class="section-lead" style="margin-bottom:28px">
+        Gisele Azevedo dedicou quase 30 anos de sua vida a ajudar mulheres a reconquistar a liberdade que a perda de urina tirou delas.
+      </p>
+
+      <ul class="credentials-list">
+        <li>Ex-professora doutoranda da Faculdade de Medicina da PUC-SP, com 28 anos de carreira acadêmica</li>
+        <li>Especialista em saúde íntima feminina, com milhares de casos acompanhados individualmente</li>
+        <li>Criadora do Protocolo Gisele Azevedo, que já ajudou mais de 3.000 mulheres a recuperar o controle</li>
+        <li>Pesquisadora e referência na área de saúde da mulher madura — reconhecida pela mídia nacional</li>
+        <li>Acredita que toda mulher pode viver livre dos escapes — e dedica cada aula a provar isso</li>
+      </ul>
+
+      <a href="#pricing" class="btn-primary" style="background:var(--wine); box-shadow: 0 8px 30px rgba(92,18,48,0.3);">
+        Começar com Gisele agora
+        <span class="btn-arrow" style="border-color:var(--cream)">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FINAL CTA ═══════════════ -->
+<section class="final-cta">
+  <div class="reveal">
+    <h2 class="final-cta-title">
+      Sua liberdade<br><em>começa hoje.</em>
+    </h2>
+    <p class="final-cta-sub">
+      Cada dia a mais esperando é um dia a menos vivendo com confiança. Os 5 Passos estão prontos para você — e o acesso é imediato.
+    </p>
+    <a href="https://lp.giseleazevedo.com/5-passos-2026/" class="btn-primary">
+      Comprar Meu Acesso · R$67
+      <span class="btn-arrow">→</span>
+    </a>
+    <p class="final-price-note">7 dias de garantia · Sem risco · Acesso vitalício</p>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <p>© 2026 Gisele Azevedo · Todos os direitos reservados</p>
+  <p style="margin-top:8px">
+    <a href="#">Política de Privacidade</a> &nbsp;·&nbsp;
+    <a href="#">Termos de Uso</a> &nbsp;·&nbsp;
+    <a href="#">Contato</a>
+  </p>
+  <p style="margin-top:12px; font-size:0.68rem; color:rgba(251,246,238,0.25)">
+    Os resultados apresentados são individuais e não garantem resultados iguais para todas as pessoas.
+  </p>
+</footer>
+
+<script>
+  // ─── SCROLL REVEAL ───
+  const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 0);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // ─── STICKY NAV ───
+  const topbar = document.getElementById('topbar');
+  const hero   = document.getElementById('hero');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > hero.offsetHeight * 0.6) {
+      topbar.classList.add('show');
+    } else {
+      topbar.classList.remove('show');
+    }
+  });
+
+  // ─── SMOOTH SCROLL ───
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
