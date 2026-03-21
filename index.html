@@ -1345,12 +1345,14 @@ function setLang(lang){
 <div id="gt-hidden-gisele" style="position:fixed;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;pointer-events:none;"></div>
 <nav class="topbar" id="topbar">
   <div class="topbar-name">Gisele Azevedo · 5 Passos</div>
-  <div class="lang-switcher">
-    <button class="lang-btn" data-lang="pt" onclick="setLang('pt')">PT</button>
-    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
-    <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+  <div style="display:flex;align-items:center;gap:12px;margin-left:auto">
+    <div class="lang-switcher">
+      <button class="lang-btn" data-lang="pt" onclick="setLang('pt')">PT</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+    </div>
+    <a href="#pricing" class="topbar-cta">Comprar Agora · R$67</a>
   </div>
-  <a href="#pricing" class="topbar-cta">Comprar Agora · R$67</a>
 </nav>
 
 <!-- ═══════════════ HERO ═══════════════ -->
@@ -1801,7 +1803,7 @@ function setLang(lang){
   const hero   = document.getElementById('hero');
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > hero.offsetHeight * 0.6) {
+    if (window.scrollY > 120) {
       topbar.classList.add('show');
     } else {
       topbar.classList.remove('show');
