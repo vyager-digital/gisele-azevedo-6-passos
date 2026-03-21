@@ -94,8 +94,10 @@
   .topbar-cta:hover { background: var(--gold-light); }
 
   /* ── LANG SWITCHER ── */
-  .goog-te-banner-frame,.skiptranslate{display:none!important}
-  body{top:0!important}
+  .goog-te-banner-frame,.skiptranslate{display:none!important;height:0!important}
+  body{top:0!important;margin-top:0!important}
+  body.translated-ltr,body.translated-rtl{margin-top:0!important;top:0!important}
+  #goog-gt-tt,.goog-te-balloon-frame{display:none!important}
   .lang-switcher{display:flex;align-items:center;gap:4px}
   .lang-btn{background:transparent;border:1px solid rgba(251,246,238,0.2);color:rgba(251,246,238,0.45);font-weight:700;font-size:0.7rem;letter-spacing:.08em;padding:4px 9px;border-radius:2px;cursor:pointer;transition:all .15s;min-height:32px}
   .lang-btn:hover{border-color:var(--gold);color:var(--gold)}
