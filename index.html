@@ -1800,15 +1800,7 @@ function setLang(lang){
 
   // ─── STICKY NAV ───
   const topbar = document.getElementById('topbar');
-  const hero   = document.getElementById('hero');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 120) {
-      topbar.classList.add('show');
-    } else {
-      topbar.classList.remove('show');
-    }
-  });
+  topbar.classList.add('show');
 
   // ─── SMOOTH SCROLL ───
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
