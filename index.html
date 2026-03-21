@@ -93,6 +93,14 @@
   }
   .topbar-cta:hover { background: var(--gold-light); }
 
+  /* ── LANG SWITCHER ── */
+  .goog-te-banner-frame,.skiptranslate{display:none!important}
+  body{top:0!important}
+  .lang-switcher{display:flex;align-items:center;gap:4px}
+  .lang-btn{background:transparent;border:1px solid rgba(251,246,238,0.2);color:rgba(251,246,238,0.45);font-weight:700;font-size:0.7rem;letter-spacing:.08em;padding:4px 9px;border-radius:2px;cursor:pointer;transition:all .15s;min-height:32px}
+  .lang-btn:hover{border-color:var(--gold);color:var(--gold)}
+  .lang-btn.active{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.1)}
+
   /* ─── HERO ─── */
   .hero {
     min-height: 100vh;
@@ -1300,12 +1308,34 @@
     .floating-badge { display:none; }
   }
 </style>
+<script>
+function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'pt',autoDisplay:false},'gt-hidden-gisele')}
+function setLang(lang){
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelector('[data-lang="'+lang+'"]').classList.add('active');
+  var s=document.querySelector('.goog-te-combo');
+  if(s){s.value=lang==='pt'?'':lang;s.dispatchEvent(new Event('change'))}
+}
+window.addEventListener('DOMContentLoaded',function(){
+  var hash=window.location.hash;
+  var initLang=hash.includes('googtrans(pt|en)')?'en':hash.includes('googtrans(pt|es)')?'es':'pt';
+  document.querySelector('[data-lang="'+initLang+'"]').classList.add('active');
+  if(initLang!=='pt'){setTimeout(function(){var s=document.querySelector('.goog-te-combo');if(s){s.value=initLang;s.dispatchEvent(new Event('change'))}},1500)}
+});
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
 
 <!-- STICKY NAV -->
+<div id="gt-hidden-gisele" style="position:fixed;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;pointer-events:none;"></div>
 <nav class="topbar" id="topbar">
   <div class="topbar-name">Gisele Azevedo · 5 Passos</div>
+  <div class="lang-switcher">
+    <button class="lang-btn" data-lang="pt" onclick="setLang('pt')">PT</button>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+  </div>
   <a href="#pricing" class="topbar-cta">Comprar Agora · R$67</a>
 </nav>
 
